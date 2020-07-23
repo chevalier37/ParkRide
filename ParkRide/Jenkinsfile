@@ -1,17 +1,14 @@
 pipeline {
     agent any
-    triggers {
-        pollSCM '* * * * *'
-    }
     stages {
         stage('Build') {
             steps {
-                sh './gradlew assemble'
+                sh '/usr/local/Cellar/maven/3.6.3/libexec/bin/mvn clean install --file ParkRide/pom.xml'
             }
         }
         stage('Test') {
             steps {
-                sh './gradlew test'
+                sh '/usr/local/Cellar/maven/3.6.3/libexec/bin/mvn test --file ParkRide/pom.xml'
             }
         }
     }
