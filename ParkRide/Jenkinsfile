@@ -6,10 +6,5 @@ pipeline {
                 sh '/usr/local/Cellar/maven/3.6.3/libexec/bin/mvn clean install --file ParkRide/pom.xml'
             }
         }
-        stage('Test') {
-            steps {
-                sh '/usr/local/Cellar/maven/3.6.3/libexec/bin/mvn test --file ParkRide/pom.xml'
-            }
-        }
     }
 } 
